@@ -5,11 +5,12 @@ export default function Subject() {
   const { subject } = useParams(); // physics | chemistry | maths
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:5000/api/notes?subject=${subject}`)
+    fetch(`${API}/api/notes?subject=${subject}`)
       .then((res) => res.json())
       .then((data) => {
         setNotes(data);
