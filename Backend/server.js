@@ -14,14 +14,16 @@ app.use("/api/notes", noteRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("Connected to Atlas MongoDB"))
-  .catch((err) => console.error(err));
-
+  .then(() => {
+    console.log("MongoDB connected");
+    app.listen(process.env.PORT || 10000, () => {
+      console.log("Server running");
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB error:", err.message);
+  });
 
 app.get("/", (req, res) => {
   res.send("API running");
-});
-
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
 });
