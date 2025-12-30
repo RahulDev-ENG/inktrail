@@ -15,7 +15,7 @@ export default function Navbar() {
             className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium"
           >
             <img
-              src="/github-icon-1.svg"
+              src="/github.jpeg"
               alt="GitHub"
               className="w-5 h-5 mr-2 inline-block"
             />
