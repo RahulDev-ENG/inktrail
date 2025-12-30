@@ -12,7 +12,7 @@ export default function Navbar() {
         <div>
           <a
             href="https://github.com/RahulDev-ENG" onClick={() => alert("You will be redirected to GitHub")}
-            className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-300 md:hover:text-white px-3 py-2 rounded-md text-lg font-medium"
           >
             GitHub  
           </a>
