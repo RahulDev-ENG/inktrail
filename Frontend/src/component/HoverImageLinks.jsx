@@ -9,7 +9,7 @@ export const HoverImageLinks = () => {
         <Link
           heading="About"
           subheading="Need to know more?Hell Nah!"
-          imgSrc="public/Who am I.jpeg"
+          imgSrc="/Who am I.jpeg"
           href="https://myportfolio-7e2c3.web.app/"
         />
         {/* <Link
@@ -21,19 +21,19 @@ export const HoverImageLinks = () => {
         <Link
           heading="Portfolio"
           subheading="Check out my work (I have none)"
-          imgSrc="public/FOCUS.jpeg"
+          imgSrc="/FOCUS.jpeg"
           href="https://myportfolio-7e2c3.web.app/"
         />
         <Link
           heading="Careers"
           subheading="Unemployed BTW ;)"
-          imgSrc="public/_.jpeg"
+          imgSrc="/_.jpeg"
           href="#"
         />
         <Link
           heading="Fun"
           subheading="Incase you're bored"
-          imgSrc="public/Julio Cesar.jpeg"
+          imgSrc="/Julio Cesar.jpeg"
           href="https://youtu.be/dQw4w9WgXcQ?si=O5z-VUd9f-7CVcJR"
         />
       </div>
