@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   const filter = {};
 
   if (req.query.subject) {
-    filter.subject = req.query.subject.toLowerCase();
+    filter.subject = new RegExp(`^${req.query.subject}$`, "i");
   }
 
   const notes = await Note.find(filter).sort({ createdAt: -1 });
