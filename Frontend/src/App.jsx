@@ -5,7 +5,6 @@ import "./App.css";
 import Navbar from "./component/Navbar.jsx";
 import Manager from "./component/Manager.jsx";
 import HoverImageLinks from "./component/HoverImageLinks.jsx";
-import StyleComponent from "./component/StyleComponent.jsx";
 import Particles from "./component/Particle.jsx";
 import SubjectNotes from "./component/Subject.jsx";
 import Telegram from "./component/Telegram.jsx";
@@ -35,7 +34,6 @@ function App() {
             <Route path="/" element={<Manager />} />
             <Route path="/subject/:subject" element={<SubjectNotes />} />
           </Routes>
-          <StyleComponent />
           <Telegram />
         </div>
         <HoverImageLinks />

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Input from "./StyleComponent";
 
 const subjects = [
   { name: "Mathematics", slug: "maths" },
@@ -33,6 +34,8 @@ export default function Manager() {
           </Link>
         ))}
       </div>
+
+      <Input />
     </div>
   );
 }

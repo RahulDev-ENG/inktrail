@@ -14,7 +14,7 @@ export default function Navbar() {
             href="https://github.com/RahulDev-ENG" onClick={() => alert("You will be redirected to GitHub")}
             className="text-gray-300 md:hover:text-white px-3 py-2 rounded-md text-lg font-medium"
           >
-            GitHub  
+            GitHub 
           </a>
         </div>
       </div>

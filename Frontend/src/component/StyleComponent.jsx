@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Input = () => {
   return (
     <StyledWrapper>
-      <div className="input-wrapper  items-center flex mx-auto ">
+      <div className="input-wrapper  items-center flex mx-auto mt-10 ">
         <svg
           className="icon"
           xmlns="http://www.w3.org/2000/svg"
