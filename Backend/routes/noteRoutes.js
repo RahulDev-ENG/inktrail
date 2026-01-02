@@ -7,14 +7,17 @@ module.exports = router;
 
 router.get("/notes", async (req, res) => {
   try {
-    const subject = req.query.subject?.toLowerCase().trim();
-    const semester = req.query.semester?.trim();
+    const subject = String(req.query.subject || "")
+      .toLowerCase()
+      .trim();
+    const semester = String(req.query.semester || "").trim();
 
     if (!subject || !semester) return res.json([]);
 
     const notes = await Note.find({ subject, semester });
     res.json(notes);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "Server error" });
   }
 });
