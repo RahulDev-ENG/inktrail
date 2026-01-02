@@ -5,15 +5,18 @@ const Note = require("../models/Notes");
 const router = express.Router();
 module.exports = router;
 
-router.get("/", async (req, res) => {
-  const filter = {};
+router.get("/notes", async (req, res) => {
+  try {
+    const subject = req.query.subject?.toLowerCase().trim();
+    const semester = req.query.semester?.trim();
 
-  if (req.query.subject) {
-    filter.subject = new RegExp(req.query.subject, "i");
+    if (!subject || !semester) return res.json([]);
+
+    const notes = await Note.find({ subject, semester });
+    res.json(notes);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
   }
-
-  const notes = await Note.find(filter).sort({ createdAt: -1 });
-  res.json(notes);
 });
 
 /**
