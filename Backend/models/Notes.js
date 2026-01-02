@@ -22,8 +22,8 @@ const noteSchema = new mongoose.Schema(
 
     semester: {
       type: String,
-      required: true, // "1" | "2" | "3" etc
-      trim: true,
+      required: true,
+      enum: ["1", "2", "3", "4", "5", "6"],
     },
 
     pdfUrl: {

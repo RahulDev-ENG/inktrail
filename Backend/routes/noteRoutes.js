@@ -22,12 +22,22 @@ router.get("/notes", async (req, res) => {
 /**
  * POST create note
  */
-router.post("/", async (req, res) => {
+router.post("/notes", async (req, res) => {
   try {
-    const note = await Note.create(req.body);
-    res.status(201).json(note);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
+    const { title, description, subject, semester, pdfUrl } = req.body;
+
+    const note = new Note({
+      title,
+      description,
+      subject: subject.toLowerCase().trim(),
+      semester: semester.replace("Semester", "").trim(),
+      pdfUrl,
+    });
+
+    await note.save();
+    res.json(note);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save note" });
   }
 });
 
