@@ -8,6 +8,7 @@ import HoverImageLinks from "./component/HoverImageLinks.jsx";
 import Particles from "./component/Particle.jsx";
 import SubjectNotes from "./component/Subject.jsx";
 import Telegram from "./component/Telegram.jsx";
+import Semester from "./component/Semester.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,7 +33,11 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Manager />} />
-            <Route path="/subject/:subject" element={<SubjectNotes />} />
+            <Route path="/semester/:subject" element={<Semester />} />
+            <Route
+              path="/subject/:subject/:semester"
+              element={<SubjectNotes />}
+            />
           </Routes>
           <Telegram />
         </div>

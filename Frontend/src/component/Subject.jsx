@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function Subject() {
-  const { subject } = useParams(); // physics | chemistry | maths
+  const { subject, semester } = useParams(); // physics | chemistry | maths
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const API = import.meta.env.VITE_API_URL;
@@ -12,7 +12,7 @@ export default function Subject() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`${API}/api/notes?subject=${subject}`)
+    fetch(`${API}/api/notes?subject=${subject}&semester=${semester}`)
       .then((res) => res.json())
       .then((data) => {
         setNotes(data);
@@ -60,7 +60,7 @@ export default function Subject() {
         ))}
         <div className="flex justify-center mt-10">
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/Semester/" + subject)}
             type="button"
             className="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold border-4 border-white group"
           >
