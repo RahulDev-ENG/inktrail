@@ -22,7 +22,7 @@ export default function Subject() {
         console.error("Fetch error:", err);
         setLoading(false);
       });
-  }, [subject]);
+  }, [subject,semester]);
 
   if (loading) {
     return <div className="pt-20 text-white text-center">Loading...</div>;
