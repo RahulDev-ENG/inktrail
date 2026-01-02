@@ -6,6 +6,7 @@ const router = express.Router();
 module.exports = router;
 
 router.get("/notes", async (req, res) => {
+  console.log(req.query);
   try {
     const subject = String(req.query.subject || "")
       .toLowerCase()
